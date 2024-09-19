@@ -131,7 +131,7 @@ public abstract class Conta implements ITaxas, Serializable {
         System.out.printf("Total: %.2f\n", totalTaxas);
     }
 
-    public void salvaDados(int numAgencia, int numConta) throws IOException, ClassNotFoundException {
+    public void salvaDados(int numAgencia, int numConta) throws IOException{
 
         /*System.out.println("*-*-Antes do processo de serialização-*-*");
         System.out.println("Conta " + this.getNumero());
@@ -153,7 +153,7 @@ public abstract class Conta implements ITaxas, Serializable {
         }
     }
 
-    public void carregaDados(int numAgencia, int numConta) {
+    public void carregaDados(int numAgencia, int numConta) throws IOException, ClassNotFoundException{
         try {
             FileInputStream arquivo = new FileInputStream(numAgencia + "-" + numConta + ".ser");
             ObjectInputStream desserializa = new ObjectInputStream(arquivo);
